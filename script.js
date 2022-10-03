@@ -1,14 +1,13 @@
-let eyeOn = true;
-const passInput = document.querySelector('.pass');
+let isEyeOn = true;
+const passwordInput = document.querySelector('.password');
 
 logo.addEventListener('click', (e) => {
-  if (eyeOn) {
-    passInput.setAttribute('type', 'text');
-    e.target.style.backgroundImage = "url('assets/eye-on.svg')";
-  } else {
-    passInput.setAttribute('type', 'password');
-    e.target.style.backgroundImage = "url('assets/eye-off.svg')";
-  }
-  passInput.focus();
-  eyeOn = !eyeOn;
+  const inputType = isEyeOn ? 'text' : 'password';
+  const iconState = isEyeOn ? 'on' : 'off';
+
+  e.target.style.backgroundImage = `url(assets/eye-${iconState}.svg)`;
+  passwordInput.setAttribute('type', inputType);
+  passwordInput.focus();
+
+  isEyeOn = !isEyeOn;
 });
