@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  background: linear-gradient(270deg, var(--background-left), var(--background-right));
+  font-family: 'Poppins', sans-serif;
+}
+
+.app {
+  display: flex;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.main {
+  background-color: var(--white);
+  border-radius: 10px;
+  width: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px auto;
+  padding: 171px 130px 33px 95px;
+}
+
+img {
+  max-width: 316px;
+  padding-bottom: 175px;
+}
+
+form {
+  width: 290px;
+}
+
+h3 {
+  font-size: 24px;
+  color: var(--black);
+  width: 100%;
+  padding-top: 2px;
+  padding-bottom: 52px;
+  text-align: center;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.input {
+  font-family: Poppins;
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  color: var(--gray);
+  background: var(--light-gray);
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  padding: 0 30px 0 68px;
+}
+
+.password {
+  padding-right: 45px;
+}
+
+.input:focus {
+  border-radius: 25px;
+  background: var(--light-gray);
+  animation: anim-shadow 0.5s ease forwards;
+}
+
+.input:focus::placeholder {
+  color: transparent;
+}
+
+@keyframes anim-shadow {
+  0% {
+    box-shadow: 0;
+    opacity: 1;
+  }
+
+  50% {
+    color: var(--green);
+    box-shadow: 0 0 50px 20px;
+    opacity: 1;
+  }
+}
+
+span {
+  font-size: 15px;
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  padding-left: 35px;
+  pointer-events: none;
+}
+
+#logo {
+  width: 24px;
+  height: 24px;
+  background: url(./assets/eye-on.svg);
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  opacity: 0;
+}
+
+.input:focus+span {
+  transition: 0.5s;
+  padding-left: 27px;
+  color: var(--green);
+}
+
+.input:focus~#logo {
+  opacity: 1;
+}
+
+.login-input {
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--green);
+  border: none;
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-top: 20px;
+}
+
+.login-input:hover {
+  background: var(--black);
+  cursor: pointer;
+}
+
+p {
+  font-size: 13px;
+  color: var(--gray);
+  text-align: center;
+  padding-top: 15px;
+}
+
+.forgot-line {
+  color: var(--gray);
+}
+
+a {
+  text-decoration: none;
+  color: var(--gray);
+  transition: 0.5s;
+}
+
+a:hover {
+  color: var(--green);
+}
+
+.new-account-line {
+  margin-top: 126px;
+}
+
+@media (max-width: 880px) {
+  .main {
+    padding: 100px 80px 33px;
+  }
+
+  img {
+    display: none;
+  }
+
+  form {
+    width: 100%;
+  }
+}
